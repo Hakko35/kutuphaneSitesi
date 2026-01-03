@@ -1,0 +1,973 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Kütüphane</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="fpcss.css">
+</head>
+<body>
+<div class="container-fruid">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">📘 HK Library</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="d-flex navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Ana Sayfa</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Kitaplar</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Etkinlikler</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Hakkımızda</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">İletişim</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!--img(görsel)-->
+<div class="imggorsel">
+
+</div>
+
+<!--Hizmetler-->
+<div class="container my-5 text-center">
+    <h2 class="fw-bold">Hizmetlerimiz
+        <span class="d-block mx-auto mt-2" style="width:150px; height:5px; background:linear-gradient(90deg,#0d6efd,#6610f2); border-radius:2px;"></span>
+    </h2>
+    <div class="text-center mb-5">     
+        <p class="text-muted">
+            Kütüphanemiz, okuyuculara en kaliteli hizmeti sunmak için
+            sürekli gelişmektedir.
+        </p>
+    </div>
+
+    <div class="row g-4">
+        <!-- Kart -->
+        <div class="col-md-4">
+            <div class="card service-card text-center p-4">
+                <i class="bi bi-book fs-1 text-primary"></i>
+                <h5 class="mt-3">Kitaplar</h5>
+                <p class="text-muted">Binlerce kitap ve dijital kaynak</p>
+                <button  class="btn btn-primary btn btn-sm" data-bs-toggle="modal" data-bs-target="#kitapmodal">
+                    Detaylı Bilgi
+                </button>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card service-card text-center p-4">
+                <i class="bi bi-calendar-event fs-1 text-purple"></i>
+                <h5 class="mt-3">Duyurular</h5>
+                <p class="text-muted">Atölyeler, kitap kulüpleri, geri bildirimler</p>
+                <button  class="btn btn-secondary btn btn-sm" data-bs-toggle="modal" data-bs-target="#duyularModal">
+                    Detaylı Bilgi
+                </button>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card service-card text-center p-4">
+                <i class="bi bi-people fs-1 text-success"></i>
+                <h5 class="mt-3">Hesap/Ayarlar</h5>
+                <p class="text-muted">Eğitici ve eğlenceli alanlar</p>
+                <button  class="btn btn-success btn btn-sm" data-bs-toggle="modal" data-bs-target="#hesapModal">
+                    Detaylı Bilgi
+                </button>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card service-card text-center p-4">
+                <i class="bi bi-clock fs-1 text-warning"></i>
+                <h5 class="mt-3">İletişim</h5>
+                <p class="text-muted">Bizimle İletişie Geçin</p>
+                <button  class="btn btn-warning btn btn-sm" data-bs-toggle="modal" data-bs-target="#iletisimModal">
+                    Detaylı Bilgi
+                </button>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card service-card text-center p-4">
+                <i class="bi bi-mortarboard fs-1 text-danger"></i>
+                <h5 class="mt-3">Öğrenci Programları</h5>
+                <p class="text-muted">Akademik destek programları</p>
+                <button  class="btn btn-danger btn btn-sm" data-bs-toggle="" data-bs-target="#registerModal">
+                    Detaylı Bilgi
+                </button>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card service-card text-center p-4">
+                <i class="bi bi-archive fs-1 text-info"></i>
+                <h5 class="mt-3">Kütüphaneler</h5>
+                <p class="text-muted">Kişiliğine Göre Yüzlerce Kütüphane</p>
+                <button  class="btn btn-info btn btn-sm" data-bs-toggle="modal" data-bs-target="#kutuphanemodal">
+                    Detaylı Bilgi
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--alt Kısım(Footer)-->
+<footer class="bg-dark text-light pt-5 pb-4">
+  <div class="container text-center text-md-start">
+    <div class="row text-center text-md-start">
+      
+      <!--Logo/Hakkımızda -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 fw-bold text-warning">Şirket Adı</h5>
+        <p>
+          Selam Ben Hako
+        </p>
+      </div>
+
+      <!--Linkler-->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 fw-bold text-warning">Bağlantılar</h5>
+        <p><a href="#" class="text-light text-decoration-none">Ana Sayfa</a></p>
+        <p><a href="#" class="text-light text-decoration-none">Hakkımızda</a></p>
+        <p><a href="#" class="text-light text-decoration-none">Hizmetler</a></p>
+        <p><a href="#" class="text-light text-decoration-none">İletişim</a></p>
+      </div>
+
+      <!-- İletişim -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 fw-bold text-warning">İletişim</h5>
+        <p><i class="bi bi-house-door me-2"></i> İzmir, Türkiye</p>
+        <p><i class="bi bi-envelope me-2"></i> haok@gmail.com</p>
+        <p><i class="bi bi-phone me-2"></i> +0530 535 53 53</p>
+      </div>
+
+    </div>
+    <hr class="mb-4">
+    <div class="row align-items-center">
+      <div class="col-md-7 col-lg-8">
+        <p class="text-center text-md-start">© 2025 Tüm Hakları Hakkının | <span class="fw-bold text-warning">Hk Library</span></p>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+
+
+
+<!-- kitalar modal başlangıç -->
+<div class="modal fade" id="kitapmodal" tabindex="-1">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+            <div class="row align-items-center mb-3 p-1 ">
+      <div class="col-md-12 text-center">
+        <h3>Kitaplar</h3>
+      </div>
+  </div>
+  <hr class="my-3">
+        <div class="row g-6 mb-4">
+          <div class="row row-cols-6 g-6">
+
+  <!-- Kitap -->
+  <div class="col">
+    <div class="card book-card h-100">
+      <img src="https://picsum.photos/300/200"
+           class="card-img-top book-img" alt="">
+      <div class="card-body text-center">
+        <h6 class="card-title mb-3">....</h6>
+
+        <button class="btn btn-read"
+                data-bs-toggle="modal"
+                data-bs-target="#okumaModal">
+          Oku
+        </button>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="col">
+    <div class="card book-card h-100">
+      <img src="https://picsum.photos/301/200"
+           class="card-img-top book-img" alt="">
+      <div class="card-body text-center">
+        <h6 class="card-title mb-3">....</h6>
+        <button class="btn btn-read">Oku</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="col">
+    <div class="card book-card h-100">
+      <img src="https://picsum.photos/302/200"
+           class="card-img-top book-img" alt="">
+      <div class="card-body text-center">
+        <h6 class="card-title mb-3">....</h6>
+        <button class="btn btn-read">Oku</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="col">
+    <div class="card book-card h-100">
+      <img src="https://picsum.photos/303/200"
+           class="card-img-top book-img" alt="">
+      <div class="card-body text-center">
+        <h6 class="card-title mb-3">....</h6>
+        <button class="btn btn-read">Oku</button>
+      </div>
+    </div>
+  </div>
+
+    <!-- 5 -->
+  <div class="col">
+    <div class="card book-card h-100">
+      <img src="https://picsum.photos/304/200"
+           class="card-img-top book-img" alt="">
+      <div class="card-body text-center">
+        <h6 class="card-title mb-3">....</h6>
+        <button class="btn btn-read">Oku</button>
+      </div>
+    </div>
+  </div>
+
+    <!-- 6 -->
+  <div class="col">
+    <div class="card book-card h-100">
+      <img src="https://picsum.photos/305/200"
+           class="card-img-top book-img" alt="">
+      <div class="card-body text-center">
+        <h6 class="card-title mb-3">....</h6>
+        <button class="btn btn-read">Oku</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+        </div>
+
+        <div class="row g-6">
+          <div class="row row-cols-6 g-6">
+
+  <!-- Kitap -->
+  <div class="col">
+    <div class="card book-card h-100">
+      <img src="https://picsum.photos/306/200"
+           class="card-img-top book-img" alt="">
+      <div class="card-body text-center">
+        <h6 class="card-title mb-3">....</h6>
+
+        <button class="btn btn-read"
+                data-bs-toggle="modal"
+                data-bs-target="#okumaModal">
+          Oku
+        </button>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="col">
+    <div class="card book-card h-100">
+      <img src="https://picsum.photos/307/200"
+           class="card-img-top book-img" alt="">
+      <div class="card-body text-center">
+        <h6 class="card-title mb-3">....</h6>
+        <button class="btn btn-read">Oku</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="col">
+    <div class="card book-card h-100">
+      <img src="https://picsum.photos/308/200"
+           class="card-img-top book-img" alt="">
+      <div class="card-body text-center">
+        <h6 class="card-title mb-3">....</h6>
+        <button class="btn btn-read">Oku</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="col">
+    <div class="card book-card h-100">
+      <img src="https://picsum.photos/309/200"
+           class="card-img-top book-img" alt="">
+      <div class="card-body text-center">
+        <h6 class="card-title mb-3">....</h6>
+        <button class="btn btn-read">Oku</button>
+      </div>
+    </div>
+  </div>
+
+    <!-- 5 -->
+  <div class="col">
+    <div class="card book-card h-100">
+      <img src="https://picsum.photos/310/200"
+           class="card-img-top book-img" alt="">
+      <div class="card-body text-center">
+        <h6 class="card-title mb-3">....</h6>
+        <button class="btn btn-read">Oku</button>
+      </div>
+    </div>
+  </div>
+
+    <!-- 6 -->
+  <div class="col">
+    <div class="card book-card h-100">
+      <img src="https://picsum.photos/311/200"
+           class="card-img-top book-img" alt="">
+      <div class="card-body text-center">
+        <h6 class="card-title mb-3">....</h6>
+        <button class="btn btn-read">Oku</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- kitalar modal biriş -->
+
+<!--Duyurular/takvim Başlangıç(Kutu)-->
+<div class="modal fade" id="duyularModal" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content rounded-4 shadow-lg">
+
+      <div class="modal-header">
+        <h5 class="modal-title">📢 Duyurular & 📅 Takvim</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+
+        <!-- TABS -->
+
+
+        <ul class="nav nav-pills mb-3 justify-content-center">
+          <li class="nav-item">
+            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#duyurularTab">
+              Duyurular
+            </button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#takvimTab">
+              Takvim
+            </button>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+<!-- ADMIN DUYURU EKLE -->
+<div id="duyuruAdminPanel" class="mb-4">
+  <h6 class="fw-bold mb-2">➕ Duyuru Ekle</h6>
+
+  <div class="row g-2">
+    <div class="col-md-4">
+      <input id="duyuruBaslik" class="form-control" placeholder="Duyuru Başlığı">
+    </div>
+    <div class="col-md-6">
+      <input id="duyuruMetin" class="form-control" placeholder="Duyuru Açıklaması">
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-success w-100" onclick="duyuruEkle()">
+        Ekle
+      </button>
+    </div>
+  </div>
+</div>
+
+          <!-- DUYURULAR -->
+          <div class="tab-pane fade show active" id="duyurularTab">
+            <div class="list-group">
+              <div class="list-group-item">
+                <h6 class="fw-bold">📌 Kütüphane Açılışı</h6>
+                <small class="text-muted">5 ocak 2026</small>
+                <p class="mb-0">Kütüphane Açılmıştır.</p>
+              </div>
+            </div>
+                      <div class="list-group" id="duyuruListesi">
+  <!-- Yeni duyurular buraya eklenecek -->
+    
+  </div>
+          </div>
+
+
+
+          <!-- TAKVİM -->
+          <div class="tab-pane fade" id="takvimTab">
+            <div class="calendar">
+              <div class="calendar-header">
+                <button class="btn btn-sm btn-outline-primary" onclick="oncekiAy()">‹</button>
+                <h5 id="ayYil" class="m-0"></h5>
+                <button class="btn btn-sm btn-outline-primary" onclick="sonrakiAy()">›</button>
+              </div>
+
+              <div class="calendar-grid" id="takvimGrid"></div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const duyuruListesi = document.getElementById("duyuruListesi");
+
+  function duyuruEkle() {
+    const baslik = document.getElementById("duyuruBaslik").value;
+    const metin = document.getElementById("duyuruMetin").value;
+
+    if (!baslik || !metin) {
+      alert("Tüm alanları doldur");
+      return;
+    }
+
+    const tarih = new Date().toLocaleDateString("tr-TR");
+
+    const div = document.createElement("div");
+    div.className = "list-group-item";
+    div.innerHTML = `
+      <h6 class="fw-bold">📌 ${baslik}</h6>
+      <small class="text-muted">${tarih}</small>
+      <p class="mb-0">${metin}</p>
+    `;
+
+    duyuruListesi.prepend(div);
+
+    // input temizle
+    document.getElementById("duyuruBaslik").value = "";
+    document.getElementById("duyuruMetin").value = "";
+  }
+</script>
+
+
+<script>
+  const aylar = [
+    "Ocak","Şubat","Mart","Nisan","Mayıs","Haziran",
+    "Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"
+  ];
+
+  let tarih = new Date();
+
+  const etkinlikGunleri = [10, 15, 20]; // örnek etkinlik günleri
+
+  function takvimCiz() {
+    const yil = tarih.getFullYear();
+    const ay = tarih.getMonth();
+
+    document.getElementById("ayYil").innerText =
+      aylar[ay] + " " + yil;
+
+    const grid = document.getElementById("takvimGrid");
+    grid.innerHTML = "";
+
+    const gunSayisi = new Date(yil, ay + 1, 0).getDate();
+
+    for (let i = 1; i <= gunSayisi; i++) {
+      const div = document.createElement("div");
+      div.className = "calendar-day";
+
+      if (etkinlikGunleri.includes(i)) {
+        div.classList.add("event");
+        div.title = "Etkinlik var";
+      }
+
+      div.innerText = i;
+      grid.appendChild(div);
+    }
+  }
+
+  function oncekiAy() {
+    tarih.setMonth(tarih.getMonth() - 1);
+    takvimCiz();
+  }
+
+  function sonrakiAy() {
+    tarih.setMonth(tarih.getMonth() + 1);
+    takvimCiz();
+  }
+
+  takvimCiz();
+</script>
+
+<!-- Duyurular Bitiş -->
+
+
+<!--HESAP Sayfası(Kutu)-->
+<div class="modal fade" id="hesapModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-md">
+    <div class="modal-content rounded-4 shadow-lg">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+      </div>
+<div class="modal-body">
+  <div class="row align-items-center mb-3">
+    <div class="col-md-2 text-center">
+      <div class="shadow-lg border border-3 border-primary rounded-circle d-flex align-items-center justify-content-center" 
+           style="width:90px; height:90px; background-image:url('hesapkapak.png'); background-size:cover; background-position:center;">
+      </div>
+    </div>
+    <div class="col-md-10">
+      <ul class="nav nav-pills justify-content-start ps-0" style="margin-left:20px;">
+        <li class="nav-item me-3">
+            <a class="nav-link  active" href="#" data-bs-toggle="modal" data-bs-target="#hesapModal"> <i class="bi bi-circle"></i> Hesap</a>
+        </li>
+        <li class="nav-item me-3">
+            <a class="nav-link " href="#" data-bs-toggle="modal" data-bs-target="#hesapistatistikModal"> <i class="bi bi-book"></i> İstatistik</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#hesapayarlarModal"> <i class="bi bi-gear"></i> Ayarlar</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="my-3">
+
+<div class="card shadow-sm p-4">
+  <h5 class="mb-3 text-primary text-center"><i class="bi bi-person-badge"></i> Kullanıcı Bilgileri</h5>
+  <div class="mb-2">
+    <label class="form-label">İsim</label>
+    <input type="text" class="form-control" value="Hako">
+  </div>
+  <div class="mb-2">
+    <label class="form-label">Soyad</label>
+    <input type="text" class="form-control" value="Hako">
+  </div>
+  <div class="mb-2">
+    <label class="form-label">E-posta</label>
+    <input type="email" class="form-control" value="blabla@gmail.com">
+  </div>
+  <div class="mb-2">
+    <label class="form-label">Telefon Numarası</label>
+    <input type="tel" class="form-control" value="0530-000-0000">
+  </div>
+  <button class="btn btn-primary mt-3"><i class="bi bi-pencil-square"></i> Güncelle</button>
+</div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+<!--Hesap Sayfa(İstatistik)Başlagıç-->
+<div class="modal fade" id="hesapistatistikModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-md">
+    <div class="modal-content rounded-4 shadow-lg">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+      </div>
+<div class="modal-body">
+  <div class="row align-items-center mb-3">
+    <div class="col-md-2 text-center">
+      <div class="shadow-lg border border-3 border-primary rounded-circle d-flex align-items-center justify-content-center" 
+           style="width:90px; height:90px; background-image:url('hesapkapak.png'); background-size:cover; background-position:center;">
+      </div>
+    </div>
+    <div class="col-md-10">
+      <ul class="nav nav-pills justify-content-start ps-0" style="margin-left:20px;">
+        <li class="nav-item me-3">
+            <a class="nav-link " href="#" data-bs-toggle="modal" data-bs-target="#hesapModal"> <i class="bi bi-circle"></i> Hesap</a>
+        </li>
+        <li class="nav-item me-3">
+            <a class="nav-link  active" href="#" data-bs-toggle="modal" data-bs-target="#hesapistatistikModal"> <i class="bi bi-book"></i> İstatistik</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="#" data-bs-toggle="modal" data-bs-target="#hesapayarlarModal"> <i class="bi bi-gear"></i> Ayarlar</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="my-3">
+
+  <div class="card shadow-sm p-4">
+    <h5 class="mb-3 text-primary text-center"><i class="bi bi-person-badge"></i> Kullanıcı İstatistikleri</h5>
+
+    <div class="row">
+      <div class="col-12 pt-2">
+        <div class="card shadow-sm border-1 rounded-4 py-2 h-40">
+          <h5 class="fw-bold text-center">Üretilen Kitap</h5><p id="istatistiksayacı" class="fs-2 fw-bold text-success text-center">0</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 pt-2">
+        <div class="card shadow-sm border-1 rounded-4 py-2 h-40">
+          <h5 class="fw-bold text-center">Ziyaret Edilen Kütüphane</h5><p id="istatistiksayacı" class="fs-2 fw-bold text-success text-center">0</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 pt-2">
+        <div class="card shadow-sm border-1 rounded-4 py-2 h-40">
+          <h5 class="fw-bold text-center">Ziyaret Edilen Kitap</h5> <p id="istatistiksayacı" class="fs-2 fw-bold text-success text-center">0</p>     
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 pt-2">
+        <div class="card shadow-sm border-1 rounded-4 py-2 h-40">
+          <h5 class="fw-bold text-center">Kaydolma Tarihi</h5><p id="istatistiksayacı" class="fs-2 fw-bold text-success text-center">0/0/0</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+    </div>
+  </div>
+</div>
+</div>
+<!--Hesap Sayfa(İstatistik)Bitiş-->
+
+<!--Hesap Sayfa(Ayarlar)Başlangıç-->
+<div class="modal fade" id="hesapayarlarModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-md">
+    <div class="modal-content rounded-4 shadow-lg">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+      </div>
+<div class="modal-body">
+  <div class="row align-items-center mb-3">
+    <div class="col-md-2 text-center">
+      <div class="shadow-lg border border-3 border-primary rounded-circle d-flex align-items-center justify-content-center" 
+           style="width:90px; height:90px; background-image:url('hesapkapak.png'); background-size:cover; background-position:center;">
+      </div>
+    </div>
+    <div class="col-md-10">
+      <ul class="nav nav-pills justify-content-start ps-0" style="margin-left:20px;">
+        <li class="nav-item me-3">
+            <a class="nav-link " href="#" data-bs-toggle="modal" data-bs-target="#hesapModal"> <i class="bi bi-circle"></i> Hesap</a>
+        </li>
+        <li class="nav-item me-3">
+            <a class="nav-link " href="#" data-bs-toggle="modal" data-bs-target="#hesapistatistikModal"> <i class="bi bi-book"></i> İstatistik</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link  active" href="#" data-bs-toggle="modal" data-bs-target="#hesapayarlarModal"> <i class="bi bi-gear"></i> Ayarlar</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+    </div>
+  </div>
+</div>
+</div>
+<!--Hesap Sayfa(Ayarlar)Bitiş-->
+
+
+<!--İLETİŞİM Sayfası(Kutu)-->
+<div class="modal fade" id="iletisimModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content rounded-4 shadow-lg">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <!-- İletişim Formu (Sol Tarafta) -->
+          <div class="col-md-7">
+            <div class="card shadow-lg border-0 rounded-4 h-100 hover-card">
+              <div class="card-body p-4">
+                <h1>İletişim</h1>
+                <form>
+                  <div class="mb-3">
+                    <label for="name" class="form-label">Adınız</label>
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="bi bi-person"></i></span>
+                      <input type="text" class="form-control" id="name" placeholder="Adınızı girin">
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="email" class="form-label">E-posta</label>
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                      <input type="email" class="form-control" id="email" placeholder="E-posta adresinizi girin">
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="message" class="form-label">Mesajınız</label>
+                    <textarea class="form-control" id="message" rows="4" placeholder="Mesajınızı yazın"></textarea>
+                  </div>
+                  <button type="button" class="btn btn-primary w-100 fw-bold shadow-sm btn-animate">
+                    Gönder <i class="bi bi-send ms-2"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- Harita (Sağ Tarafta) -->
+          <div class="col-md-5">
+            <div class="card shadow-lg border-0 rounded-4 h-100 overflow-hidden hover-card">
+              <div class="card-body p-0">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3061.927!2d27.138!3d38.423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b97d4f!2sİzmir!5e0!3m2!1str!2str!4v1700000000000" 
+                  width="100%" height="100%" style="border:0; min-height:400px; border-radius:15px;" allowfullscreen="" loading="lazy">
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- kütüphane Başlagıç -->
+<div class="modal fade" id="kutuphanemodal" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-scrollable">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Kütüphane Takip Sistemi</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+
+        <!-- İSTATİSTİK -->
+        <div class="row text-center mb-4">
+          <div class="col">
+            <div class="stat-card">
+              <h4 id="uyeSayisi">2</h4>
+              <small>Toplam Üye</small>
+            </div>
+          </div>
+          <div class="col">
+            <div class="stat-card">
+              <h4 id="kitapSayisi">0</h4>
+              <small>Ödünç Kitap</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- ADMIN PANEL -->
+        <div id="adminPanel" class="mb-4">
+          <h6 class="fw-bold mb-3">📕 Kitap Ödünç Ver</h6>
+          <div class="row g-2">
+            <div class="col">
+              <input id="uyeAdi" class="form-control" placeholder="Üye Adı">
+            </div>
+            <div class="col">
+              <input id="kitapAdi" class="form-control" placeholder="Kitap Adı">
+            </div>
+            <div class="col">
+              <button class="btn btn-success w-100" onclick="kitapVer()">Ödünç Ver</button>
+            </div>
+          </div>
+        </div>
+        <!-- üye ekleme -->
+        <div id="uyeEklePanel" class="mb-4 mt-4">
+  <h6 class="fw-bold mb-3">👤 Üye Ekle</h6>
+
+  <div class="row g-2">
+    <div class="col-md-3">
+      <input id="uyeAdSoyad" class="form-control" placeholder="Ad Soyad">
+    </div>
+    <div class="col-md-3">
+      <input id="uyeEmail" type="email" class="form-control" placeholder="E-posta">
+    </div>
+    <div class="col-md-3">
+      <input id="uyeTelefon" class="form-control" placeholder="Telefon">
+    </div>
+    <div class="col-md-3">
+      <button class="btn btn-primary w-100" onclick="uyeEkle()">
+        Üye Ekle
+      </button>
+    </div>
+  </div>
+</div>
+
+
+        <!-- TABS -->
+        <ul class="nav nav-tabs mb-3">
+          <li class="nav-item">
+            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#takip">
+              Kitap Takibi
+            </button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#uyeler">
+              Üyeler
+            </button>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+
+          <!-- TAKİP -->
+          <div class="tab-pane fade show active" id="takip">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Üye</th>
+                  <th>Kitap</th>
+                  <th>Tarih</th>
+                  <th>İşlem</th>
+                </tr>
+              </thead>
+              <tbody id="takipTablo"></tbody>
+            </table>
+          </div>
+
+          <!-- ÜYELER -->
+          <div class="tab-pane fade" id="uyeler">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Ad Soyad</th>
+                  <th>E-posta</th>
+                  <th>Telefon</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>tunç Yılmaz</td>
+                  <td>ahmet@mail.com</td>
+                  <td>0535 035 35 35</td>
+                </tr>
+                <tr>
+                  <td>emre gündekli</td>
+                  <td>ayse@mail.com</td>
+                  <td>0536 036 36 36</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JS -->
+
+<script>
+  // ROL AYARI
+  const currentUser = {
+    role: "admin" // user yaparsan admin kapanır
+  };
+
+  const tablo = document.getElementById("takipTablo");
+  const kitapSayisi = document.getElementById("kitapSayisi");
+
+  function kitapVer() {
+    const uye = document.getElementById("uyeAdi").value;
+    const kitap = document.getElementById("kitapAdi").value;
+
+    if (!uye || !kitap) {
+      alert("Alanları doldur");
+      return;
+    }
+
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${uye}</td>
+      <td>${kitap}</td>
+      <td>${new Date().toLocaleDateString()}</td>
+      <td>
+        <button class="btn btn-sm btn-danger" onclick="geriAl(this)">
+          Geri Al
+        </button>
+      </td>
+    `;
+
+    tablo.appendChild(tr);
+    kitapSayisi.innerText = tablo.children.length;
+  }
+
+  function geriAl(btn) {
+    btn.closest("tr").remove();
+    kitapSayisi.innerText = tablo.children.length;
+  }
+
+  // USER ise admin paneli gizle
+  if (currentUser.role !== "admin") {
+    document.getElementById("adminPanel").style.display = "none";
+  }
+</script>
+<script>
+  const uyelerTablo = document.getElementById("uyelerTablo");
+  const uyeSayisi = document.getElementById("uyeSayisi");
+
+  function uyeEkle() {
+    const ad = document.getElementById("uyeAdSoyad").value;
+    const email = document.getElementById("uyeEmail").value;
+    const tel = document.getElementById("uyeTelefon").value;
+
+    if (!ad || !email || !tel) {
+      alert("Tüm alanları doldur");
+      return;
+    }
+
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${ad}</td>
+      <td>${email}</td>
+      <td>${tel}</td>
+    `;
+
+    uyelerTablo.appendChild(tr);
+
+    // Üye sayısını artır
+    uyeSayisi.innerText = uyelerTablo.children.length;
+
+    // Alanları temizle
+    document.getElementById("uyeAdSoyad").value = "";
+    document.getElementById("uyeEmail").value = "";
+    document.getElementById("uyeTelefon").value = "";
+  }
+</script>
+
+<!-- Kütüphane Bitiş -->
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

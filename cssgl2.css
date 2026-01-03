@@ -1,0 +1,104 @@
+  body {
+      background-color: #f8f9fa;
+    }
+    .navbar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .navbar-brand {
+    font-size: 1.75rem;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 0.875rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .btn {
+    font-size: 0.875rem;
+    padding: 5px 10px;
+    border-radius:25px;
+  }
+
+  @media (max-width: 767px) {
+    .navbar {
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+    .navbar-brand {
+      font-size: 1.5rem;
+    }
+
+    .navbar-nav .nav-link {
+      font-size: 0.8rem;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+
+    .btn {
+      font-size: 0.8rem;
+      padding: 4px 8px;
+    }
+  }
+
+    section {
+      padding: 50px 0;
+    }
+
+/* Arka plan */
+.background-container {
+  height: 85vh;
+  background-image: url('eskikitap.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.background-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+#hakkimda {
+  position: relative;
+  z-index: 2;
+}
+
+/* Glassmorphism Kart */
+.glass-card {
+  background: rgba(255,255,255,0.13);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+/* Paket kartları */
+.pricing-card {
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+  .hover-card:hover {
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+  }
+    .btn-animate:hover {
+    background: linear-gradient(90deg,#0d6efd,#6610f2);
+    transform: translateY(-2px);
+  }

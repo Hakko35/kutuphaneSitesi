@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HK</title>
+  <!--Css Kodu-->
+  <link rel="stylesheet" type="text/css" href="cssgl2.css">
+  <!--Bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-lg py-3">
+  <div class="container-fluid">
+    <!-- Marka -->
+    <a class="navbar-brand fw-bold fs-3" href="#">Hk Library</a>
+
+    <!-- Menü -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto fs-5 align-items-center">
+        <li class="nav-item"><a class="nav-link" href="#hakkimda">Hakkımda</a></li>
+        <li class="nav-item"><a class="nav-link" href="#iletisim">İletişim</a></li>
+        <li class="nav-item"><a class="nav-link" href="#paketler">Paketler</a></li>
+
+        <!-- Sağ tarafta Kaydol ve Giriş butonları -->
+        <li class="nav-item ms-3">
+          <!-- Kaydol butonu modal açar -->
+          <button  class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#kaydolModal">
+            Kaydol
+          </button>
+          <button  class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#girisModal">
+             Giriş
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!--Giriş Modal-->
+<div class="modal fade" id="girisModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-4 shadow-lg">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold" id="registerModalLabel">Kayıt Ol</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+      </div>
+      <div class="modal-body">
+        <form id="loginForm">
+          <div class="mb-3">
+            <label for="loginName" class="form-label">Adınız</label>
+            <input type="text" class="form-control" id="loginName" placeholder="Adınızı girin" required>
+          </div>
+          <div class="mb-3">
+            <label for="loginPassword" class="form-label">Şifre</label>
+            <input type="password" class="form-control" id="loginPassword" placeholder="Şifrenizi girin" required>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Giriş</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Giriş Java-->
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // Sayfa yenilenmesin
+
+    const name = document.getElementById("loginName").value;
+    const password = document.getElementById("loginPassword").value;
+
+    // Doğru bilgiler (örnek)
+    if (name === "hako" && password === "123") {
+        window.location.href = ""; // gidicegi dosya
+    } else {
+        alert("Kullanıcı adı veya şifre yanlış!");
+    }
+});
+</script>
+
+
+<!-- Kaydol Modal -->
+<div class="modal fade" id="kaydolModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-4 shadow-lg">
+      <div class="modal-header">
+        <h5 class="modal-title fw-bold" id="registerModalLabel">Kayıt Ol</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Kapat"></button>
+      </div>
+      <div class="modal-body">
+        <form id="registerForm">
+          <div class="mb-3">
+            <label for="regName" class="form-label">Adınız</label>
+            <input type="text" class="form-control" id="regName" placeholder="Adınızı girin" required>
+          </div>
+          <div class="mb-3">
+            <label for="regEmail" class="form-label">E-posta</label>
+            <input type="email" class="form-control" id="regEmail" placeholder="E-posta adresinizi girin" required>
+          </div>
+          <div class="mb-3">
+            <label for="regPassword" class="form-label">Şifre</label>
+            <input type="password" class="form-control" id="regPassword" placeholder="Şifrenizi girin" required>
+          </div>
+          <div class="mb-3">
+            <label for="regConfirmPassword" class="form-label">Şifre Tekrar</label>
+            <input type="password" class="form-control" id="regConfirmPassword" placeholder="Şifrenizi tekrar girin" required>
+          </div>
+          <div id="passwordError" class="text-danger mb-3" style="display:none;">
+            Şifreler eşleşmiyor!
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Kaydol</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Kaydol Java-->
+<script>
+  document.getElementById("registerForm").addEventListener("submit", function(event) {
+    const password = document.getElementById("regPassword").value;
+    const confirmPassword = document.getElementById("regConfirmPassword").value;
+    const errorDiv = document.getElementById("passwordError");
+
+    if (password !== confirmPassword) {
+      event.preventDefault(); // Formu göndermeyi engelle
+      errorDiv.style.display = "block"; // Hata mesajını göster
+    } else {
+      errorDiv.style.display = "none"; // Hata mesajını gizle
+    }
+  });
+</script>
+
+<!--Hakkımda -->
+<div class="background-container d-flex align-items-center">
+  <div id="hakkimda" class="w-100">
+    <div class="container">
+      <div class="glass-card p-5 text-center mx-auto" style="max-width: 800px;">
+        <h2 class="fw-bold mb-3">Web Tabanlı Uygulama Geliştirme<br> Dönem Ödevi</h2>
+        <p class="fs-5">
+          Kendi dijital kütüphaneni oluştur, okuduğun kitapları takip et ve gelişimini düzenli olarak analiz etme. Web Sitesidir
+        </p>
+        <p class="fst-italic">BU WEB SİTESİ DENEMEDEDİR DAHA TAM OLARAK BİTMEMİŞTİR.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--İstatistikler-->
+<div id="istatistikler" class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-5">📊 Platform İstatistikleri</h2>
+    <div class="row g-4">
+
+      <!--Toplam Kullanıcı-->
+      <div class="col-md-4">
+        <div class="card shadow-lg border-0 rounded-4 py-4 h-100">
+          <img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png" 
+               alt="Kullanıcı İkonu" width="80" class="mx-auto mb-3">
+          <h3 class="fw-bold">Kullanıcı Sayısı</h3>
+          <p id="totalUsers" class="fs-2 fw-bold text-success">0</p>
+        </div>
+      </div>
+
+      <!--Kullanıcı-->
+      <div class="col-md-4">
+        <div class="card shadow-lg border-0 rounded-4 py-4 h-100">
+          <img src="https://cdn-icons-png.flaticon.com/512/1828/1828640.png" 
+               alt="Aktif İkonu" width="80" class="mx-auto mb-3">
+          <h3 class="fw-bold">Şu Anda Aktif</h3>
+          <p id="onlineUsers" class="fs-2 fw-bold text-success">0</p>
+        </div>
+      </div>
+
+      <!--Kitap Sayısı-->
+      <div class="col-md-4">
+        <div class="card shadow-lg border-0 rounded-4 py-4 h-100">
+          <img src="https://cdn-icons-png.flaticon.com/512/29/29302.png" 
+               alt="Kitap İkonu" width="80" class="mx-auto mb-3">
+          <h3 class="fw-bold">Kitaplar</h3>
+          <p id="bookCount" class="fs-2 fw-bold text-success">0</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+            
+        <!--Paketler-->
+<div id="paketler" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5 fw-bold">Üyelik Paketleri</h2>
+    <div class="row justify-content-center">
+      <!--başlangoç Paket-->
+      <div class="col-md-4">
+        <div class="card shadow-lg border-0 rounded-4 mb-4 h-100 hover-card">
+          <div class="card-body text-center">
+            <h3 class="card-title fw-bold">Başlangıç</h3>
+            <p class="text-muted mb-4">Yeni başlayanlar için ideal!</p>
+            <h2 class="fw-bold">Ücretsiz</h2>
+            <ul class="list-unstyled mb-4">
+              <li><i class="bi bi-check-circle text-success"></i> 3 Kitap Kaydı</li>
+              <li><i class="bi bi-check-circle text-success"></i> Öğrenci Sistemi</li>
+              <li><i class="bi bi-check-circle text-success"></i> Temel İstatistikler</li>
+            </br>
+            </br>
+            </br>
+            </ul>
+            <a href="#" class="btn btn-primary w-100">Abone Ol</a>
+          </div>
+        </div>
+      </div>
+
+      <!--standart Paket-->
+      <div class="col-md-4">
+        <div class="card shadow-lg border-0 rounded-4 mb-4 h-100 hover-card">
+          <div class="card-body text-center">
+            <h3 class="card-title fw-bold">Standart</h3>
+            <p class="text-muted mb-4">Daha fazla özellik, daha fazla kontrol!</p>
+            <h2 class="fw-bold">₺599 / Ay</h2>
+            <ul class="list-unstyled mb-4">
+              <li><i class="bi bi-check-circle text-success"></i> 20 Kitap Kaydı</li>
+              <li><i class="bi bi-check-circle text-success"></i> Öğrenci Sistemi</li>
+              <li><i class="bi bi-check-circle text-success"></i> Gelişmiş İstatistikler</li>
+              <li><i class="bi bi-check-circle text-success"></i> Özel Kitap Önerileri</li>
+            </br>
+            </br>
+            </ul>
+            <a href="#" class="btn btn-primary w-100">Abone Ol</a>
+          </div>
+        </div>
+      </div>
+
+      <!--profesyonel Paket-->
+      <div class="col-md-4">
+        <div class="card shadow-lg border-0 rounded-4 mb-4 h-100 hover-card">
+          <div class="card-body text-center">
+            <h3 class="card-title fw-bold">Profesyonel</h3>
+            <p class="text-muted mb-4">Tam özellikli, profesyonel için!</p>
+            <h2 class="fw-bold">₺1299 / Ay</h2>
+            <ul class="list-unstyled mb-4">
+              <li><i class="bi bi-check-circle text-success"></i> Sonsuz Kitap Kaydı</li>
+              <li><i class="bi bi-check-circle text-success"></i> Gelişmiş Öğrenci Takip Sistemi</li>
+              <li><i class="bi bi-check-circle text-success"></i> Gelişmiş İstatistikler</li>
+              <li><i class="bi bi-check-circle text-success"></i> Özel Kitap Önerileri</li>
+              <li><i class="bi bi-check-circle text-success"></i> VIP Destek</li>
+              <li><i class="bi bi-check-circle text-success"></i> Kütüphane Destek</li>
+            </ul>
+            <a href="#" class="btn btn-primary w-100">Abone Ol</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- İletişim -->
+<div id="iletisim" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5 fw-bold position-relative">
+      İletişim
+      <span class="d-block mx-auto mt-2" style="width:60px; height:4px; background:linear-gradient(90deg,#0d6efd,#6610f2); border-radius:2px;"></span>
+    </h2>
+    <div class="row g-4">
+      
+      <!-- Form (sol) -->
+      <div class="col-md-6">
+        <div class="card shadow-lg border-0 rounded-4 h-100 hover-card">
+          <div class="card-body p-4">
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label">Adınız</label>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-person"></i></span>
+                  <input type="text" class="form-control" id="name" placeholder="Adınızı girin">
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">E-posta</label>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                  <input type="email" class="form-control" id="email" placeholder="E-posta adresinizi girin">
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Mesajınız</label>
+                <textarea class="form-control" id="message" rows="4" placeholder="Mesajınızı yazın"></textarea>
+              </div>
+              <button type="button" class="btn btn-primary w-100 fw-bold shadow-sm btn-animate">
+                Gönder <i class="bi bi-send ms-2"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Harita (sağ tarafta kutu içinde) -->
+      <div class="col-md-6">
+        <div class="card shadow-lg border-0 rounded-4 h-100 overflow-hidden hover-card">
+          <div class="card-body p-0">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3061.927!2d27.138!3d38.423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b97d4f!2sİzmir!5e0!3m2!1str!2str!4v1700000000000" 
+              width="100%" height="100%" style="border:0; min-height:400px; border-radius:15px;" allowfullscreen="" loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!--alt Kısım-->
+<footer class="bg-dark text-light pt-5 pb-4">
+  <div class="container text-center text-md-start">
+    <div class="row text-center text-md-start">
+      
+      <!--Logo/Hakkımızda -->
+      <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 fw-bold text-warning">Şirket Adı</h5>
+        <p>
+          Selam Ben Hako
+        </p>
+      </div>
+
+      <!--Linkler-->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 fw-bold text-warning">Bağlantılar</h5>
+        <p><a href="#" class="text-light text-decoration-none">Ana Sayfa</a></p>
+        <p><a href="#" class="text-light text-decoration-none">Hakkımızda</a></p>
+        <p><a href="#" class="text-light text-decoration-none">Hizmetler</a></p>
+        <p><a href="#" class="text-light text-decoration-none">İletişim</a></p>
+      </div>
+
+      <!-- İletişim -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 fw-bold text-warning">İletişim</h5>
+        <p><i class="bi bi-house-door me-2"></i> İzmir, Türkiye</p>
+        <p><i class="bi bi-envelope me-2"></i> haok@gmail.com</p>
+        <p><i class="bi bi-phone me-2"></i> +0530 535 53 53</p>
+      </div>
+
+    </div>
+    <hr class="mb-4">
+    <div class="row align-items-center">
+      <div class="col-md-7 col-lg-8">
+        <p class="text-center text-md-start">© 2025 Tüm Hakları Hakkının | <span class="fw-bold text-warning">Hk Library</span></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <!--Bootstrap-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

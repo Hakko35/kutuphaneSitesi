@@ -1,0 +1,142 @@
+        body {
+            background-color: #f8f9fa;
+        }
+        .imggorsel {
+              background-image: url(profesyonelresim.jpg);
+              height: 350px;
+              background-size: cover;
+              background-position: center;
+              background-attachment: fixed;
+              position: relative;
+        }
+        .service-card {
+            transition: transform 0.3s;
+            border-radius:20px;
+
+        }
+        .service-card:hover {
+         transform: scale(1.02);
+         transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        footer {
+            background: #0d1b2a;
+            color: #adb5bd;
+        }
+        footer a {
+            color: #adb5bd;
+            text-decoration: none;
+        }
+        footer a:hover {
+            color: #fff;
+        }
+
+
+
+.book-img {
+  height: 160px;
+  object-fit: cover;
+}
+
+.book-card {
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform .2s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+}
+
+.btn-read {
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: #fff;
+  padding: 8px 22px;
+  border-radius: 30px;
+  font-size: 14px;
+  border: none;
+}
+
+.btn-read:hover {
+  background: linear-gradient(135deg, #4338ca, #4f46e5);
+  color: #fff;
+}
+
+
+
+
+
+    .book-img {
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .book-card {
+      border: none;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    }
+
+    .btn-read {
+      background: linear-gradient(135deg,#4f46e5,#6366f1);
+      color: #fff;
+      border-radius: 30px;
+      padding: 6px 20px;
+      border: none;
+    }
+
+    .stat-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    }
+
+    #adminPanel {
+      background: #eef2ff;
+      padding: 15px;
+      border-radius: 12px;
+    }
+
+
+
+
+
+    .calendar {
+  background: #f8f9ff;
+  padding: 20px;
+  border-radius: 16px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.calendar-day {
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,.08);
+}
+
+.calendar-day.event {
+  background: #4f46e5;
+  color: white;
+  font-weight: bold;
+}
